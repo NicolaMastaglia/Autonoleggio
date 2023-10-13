@@ -1,46 +1,41 @@
+import java.time.LocalDate;
+
 class Cliente {
     private String nome;
     private String cognome;
+    private LocalDate dataNascita;
     private String numeroTelefono;
-    private String indirizzo;
 
-    public Cliente(String nome, String cognome, String numeroTelefono, String indirizzo) {
+    public Cliente(String nome, String cognome, LocalDate dataNascita, String numeroTelefono) {
         this.nome = nome;
         this.cognome = cognome;
+        this.dataNascita = dataNascita;
         this.numeroTelefono = numeroTelefono;
-        this.indirizzo = indirizzo;
     }
-
 
     public String getNome() {
         return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public String getCognome() {
         return cognome;
     }
 
-    public void setCognome(String cognome) {
-        this.cognome = cognome;
+    public LocalDate getDataNascita() {
+        return dataNascita;
     }
 
     public String getNumeroTelefono() {
         return numeroTelefono;
     }
 
-    public void setNumeroTelefono(String numeroTelefono) {
-        this.numeroTelefono = numeroTelefono;
-    }
-
-    public String getIndirizzo() {
-        return indirizzo;
-    }
-
-    public void setIndirizzo(String indirizzo) {
-        this.indirizzo = indirizzo;
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "nome='" + nome + '\'' +
+                ", cognome='" + cognome + '\'' +
+                ", dataNascita=" + dataNascita +
+                ", numeroTelefono='" + numeroTelefono + '\'' +
+                '}';
     }
 }

@@ -1,30 +1,30 @@
-import java.util.Date;
+import java.time.LocalDate;
 
 
-class PatenteCliente extends Cliente {
-    private Date dataRilascio;
-    private Date dataScadenza;
+class Patente extends Cliente {
+    private String numeroPatente;
+    private LocalDate scadenzaPatente;
 
-    public PatenteCliente(String nome, String cognome, String numeroTelefono, String indirizzo, Date dataRilascio, Date dataScadenza) {
-        super(nome, cognome, numeroTelefono, indirizzo);
-        this.dataRilascio = dataRilascio;
-        this.dataScadenza = dataScadenza;
+    public Patente(String nome, String cognome, LocalDate dataNascita, String numeroTelefono,
+                   String numeroPatente, LocalDate scadenzaPatente) {
+        super(nome, cognome, dataNascita, numeroTelefono);
+        this.numeroPatente = numeroPatente;
+        this.scadenzaPatente = scadenzaPatente;
     }
 
-
-    public Date getDataRilascio() {
-        return dataRilascio;
+    public String getNumeroPatente() {
+        return numeroPatente;
     }
 
-    public void setDataRilascio(Date dataRilascio) {
-        this.dataRilascio = dataRilascio;
+    public LocalDate getScadenzaPatente() {
+        return scadenzaPatente;
     }
 
-    public Date getDataScadenza() {
-        return dataScadenza;
-    }
-
-    public void setDataScadenza(Date dataScadenza) {
-        this.dataScadenza = dataScadenza;
+    @Override
+    public String toString() {
+        return "Patente{" +
+                "numeroPatente='" + numeroPatente + '\'' +
+                ", scadenzaPatente=" + scadenzaPatente +
+                "} " + super.toString();
     }
 }
